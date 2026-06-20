@@ -7,6 +7,7 @@ import TestimonialsSection from "@/sections/TestimonialsSection";
 import TechnologiesSection from "@/sections/TechnologiesSection";
 import SolutionsSection from "@/sections/SolutionsSection";
 import StatsSection from "@/sections/StatsSection";
+import FeaturedProjectsSection from "@/sections/FeaturedProjectsSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ServicesSection />
       <SolutionsSection />
       <WhyChooseUs />
+      <FeaturedProjectsSection />
       <TestimonialsSection />
       <TechnologiesSection />
       <CTASection />
