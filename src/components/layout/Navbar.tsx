@@ -23,7 +23,7 @@ export default function Navbar() {
         </div>
 
         <Link
-          href="/contact"
+          href="/get-quote"
           className="hidden md:inline-flex bg-blue-700 text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition"
         >
           Get Quote

@@ -6,9 +6,9 @@ export const company = {
   location: "Pretoria, South Africa",
 
   social: {
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/company/selianord-group/?viewAsMember=true",
     facebook: "#",
     instagram: "#",
-    github: "#"
+    github: "https://github.com/lusuJR"
   }
 };
