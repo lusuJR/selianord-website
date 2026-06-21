@@ -1,6 +1,47 @@
+"use client";
+
+import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function ContactPage() {
+
+  const [loading, setLoading] = useState(false);
+const [message, setMessage] = useState("");
+
+async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+  e.preventDefault();
+
+  setLoading(true);
+  setMessage("");
+
+  const form = e.currentTarget;
+  const formData = new FormData(form);
+
+  const contact = {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    subject: formData.get("subject"),
+    message: formData.get("message"),
+  };
+
+  const response = await fetch("http://localhost:5032/api/Contact", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(contact),
+  });
+
+  setLoading(false);
+
+  if (response.ok) {
+    setMessage("Message sent successfully.");
+    form.reset();
+  } else {
+    setMessage("Something went wrong. Please try again.");
+  }
+}
+
   return (
     <main className="bg-slate-50">
       {/* Hero */}
@@ -29,34 +70,51 @@ export default function ContactPage() {
           <div className="bg-white p-10 rounded-3xl shadow-xl">
             <h2 className="text-3xl font-bold mb-8">Send Us a Message</h2>
 
-            <form className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <input
                 type="text"
+                name="name"
                 placeholder="Full Name"
                 className="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
               />
 
               <input
                 type="email"
+                name="email"
                 placeholder="Email Address"
                 className="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
               />
 
               <input
                 type="text"
+                name="subject"
                 placeholder="Subject"
                 className="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
               />
 
               <textarea
+                name="message"
                 rows={5}
                 placeholder="Tell us about your project..."
                 className="w-full p-4 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
+                required
               ></textarea>
 
-              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-medium transition">
-                Send Message
+              <button
+                type="submit"
+                disabled={loading}
+                className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-medium transition disabled:opacity-60"
+              >
+                {loading ? "Sending..." : "Send Message"}
               </button>
+              {message && (
+                <p className="text-sm font-medium text-blue-700">
+                  {message}
+                </p>
+              )}
             </form>
           </div>
 
