@@ -1,6 +1,48 @@
+"use client";
+
+import { useState } from "react";
 import { BriefcaseBusiness, Mail, Phone } from "lucide-react";
+import { form } from "framer-motion/m";
 
 export default function GetQuotePage() {
+    const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    setLoading(true);
+    setMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const quote = {
+      fullName: formData.get("fullName"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      service: formData.get("service"),
+      budgetRange: formData.get("budgetRange"),
+      description: formData.get("description"),
+    };
+
+    const response = await fetch("http://localhost:5032/api/Quote", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(quote),
+    });
+
+    setLoading(false);
+
+if (response.ok) {
+  setMessage("Quote request submitted successfully.");
+  form.reset();
+} else {
+  setMessage("Something went wrong. Please try again.");
+}
+  }
   return (
     <main className="bg-slate-50">
       <section className="pt-24 pb-16 bg-gradient-to-br from-slate-50 via-white to-blue-50">
@@ -25,13 +67,31 @@ export default function GetQuotePage() {
           <div className="bg-white p-10 rounded-3xl shadow-xl">
             <h2 className="text-3xl font-bold mb-8">Project Details</h2>
 
-            <form className="space-y-6">
-              <input className="w-full p-4 rounded-xl border" placeholder="Full Name" />
-              <input className="w-full p-4 rounded-xl border" placeholder="Email Address" />
-              <input className="w-full p-4 rounded-xl border" placeholder="Phone Number" />
+            <form onSubmit={handleSubmit} className="space-y-6">
+                <input
+                  name="fullName"
+                  className="w-full p-4 rounded-xl border"
+                  placeholder="Full Name"
+                  required
+                />
 
-              <select className="w-full p-4 rounded-xl border">
-                <option>Select Service</option>
+                <input
+                  name="email"
+                  type="email"
+                  className="w-full p-4 rounded-xl border"
+                  placeholder="Email Address"
+                  required
+                />
+
+                <input
+                  name="phone"
+                  className="w-full p-4 rounded-xl border"
+                  placeholder="Phone Number"
+                  required
+                />
+
+              <select name="service" className="w-full p-4 rounded-xl border" required>
+                <option value="">Select Service</option>
                 <option>Software Development</option>
                 <option>Cloud Solutions</option>
                 <option>IT Consulting</option>
@@ -40,8 +100,8 @@ export default function GetQuotePage() {
                 <option>Data Solutions</option>
               </select>
 
-              <select className="w-full p-4 rounded-xl border">
-                <option>Budget Range</option>
+              <select name="budgetRange" className="w-full p-4 rounded-xl border" required>
+                <option value="">Select Budget Range</option>
                 <option>Below R10,000</option>
                 <option>R10,000 - R50,000</option>
                 <option>R50,000 - R100,000</option>
@@ -49,14 +109,25 @@ export default function GetQuotePage() {
               </select>
 
               <textarea
+                name="description"
                 rows={5}
                 className="w-full p-4 rounded-xl border"
                 placeholder="Describe your project..."
+                required
               />
 
-              <button className="bg-blue-700 text-white px-8 py-4 rounded-xl font-medium">
-                Submit Quote Request
-              </button>
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-blue-700 text-white px-8 py-4 rounded-xl font-medium disabled:opacity-60"
+            >
+              {loading ? "Submitting..." : "Submit Quote Request"}
+            </button>
+              {message && (
+                <p className="text-sm font-medium text-blue-700">
+                  {message}
+                </p>
+              )}
             </form>
           </div>
 
