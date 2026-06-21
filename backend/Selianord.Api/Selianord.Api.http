@@ -1,0 +1,6 @@
+@Selianord.Api_HostAddress = http://localhost:5032
+
+GET {{Selianord.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
