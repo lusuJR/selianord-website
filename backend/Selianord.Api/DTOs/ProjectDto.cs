@@ -10,5 +10,5 @@ public class ProjectDto
 
     public string ImageUrl { get; set; } = string.Empty;
 
-    public string Tags { get; set; } = string.Empty;
+    public string Category { get; set; } = string.Empty;
 }
