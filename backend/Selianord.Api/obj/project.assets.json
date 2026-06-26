@@ -3638,11 +3638,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\Selianord.Api.csproj",
+      "projectUniqueName": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\Selianord.Api.csproj",
       "projectName": "Selianord.Api",
-      "projectPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\Selianord.Api.csproj",
+      "projectPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\Selianord.Api.csproj",
       "packagesPath": "C:\\Users\\LusukamaSelemani\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\obj\\",
+      "outputPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

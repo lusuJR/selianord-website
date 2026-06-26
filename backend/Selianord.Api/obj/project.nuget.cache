@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6rowY4m0JxE=",
+  "dgSpecHash": "SkLgSN5OqHw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\Selianord.Api.csproj",
+  "projectFilePath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\Selianord.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\LusukamaSelemani\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\LusukamaSelemani\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
@@ -66,9 +66,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'AutoMapper' 12.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-rvv3-g6hj-g44x",
-      "projectPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\Selianord.Api.csproj",
+      "projectPath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\Selianord.Api.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\Backend\\Selianord.Api\\Selianord.Api.csproj",
+      "filePath": "C:\\Users\\LusukamaSelemani\\source\\repos\\selianord-website\\backend\\Selianord.Api\\Selianord.Api.csproj",
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net10.0"
