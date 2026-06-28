@@ -8,11 +8,13 @@ import TechnologiesSection from "@/sections/TechnologiesSection";
 import SolutionsSection from "@/sections/SolutionsSection";
 import StatsSection from "@/sections/StatsSection";
 import FeaturedProjectsSection from "@/sections/FeaturedProjectsSection";
+import Hero2 from "@/sections/Hero2";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      {/* <Hero2 /> */}
       <StatsSection />
       <AboutSection />
       <ServicesSection />

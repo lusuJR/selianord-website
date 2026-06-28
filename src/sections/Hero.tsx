@@ -104,13 +104,13 @@ export default function Hero() {
               ))}
             </div>
 
-            <div className="mt-6 bg-slate-950 text-white rounded-2xl p-6">
+            {/* <div className="mt-6 bg-slate-950 text-white rounded-2xl p-6">
               <h3 className="text-xl font-bold">Selianord Digital Hub</h3>
               <p className="mt-2 text-slate-300">
                 One partner for software, cloud, data, security and digital
                 growth.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
