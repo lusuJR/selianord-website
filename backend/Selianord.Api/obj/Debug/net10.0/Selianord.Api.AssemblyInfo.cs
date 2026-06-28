@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Selianord.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f23e0d091c4e67e0b595f9deb899868a7601513")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d67605a59deebbf17db4503651f3156be49cc60c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Selianord.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Selianord.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
